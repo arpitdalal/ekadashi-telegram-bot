@@ -1,0 +1,88 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: hsl(234, 10%, 19%);
+  --white: hsl(0, 0%, 96%);
+  --light-black: hsl(234, 10%, 29%);
+  --green: hsl(120, 54%, 63%);
+  --red: hsl(0, 54%, 63%);
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 3rem auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.green {
+  color: var(--green);
+}
+
+.red {
+  color: var(--red);
+}
+
+#successOrError {
+  text-align: center;
+  font-size: 18px;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.d-flex.justify-space-between {
+  justify-content: space-between;
+}
+
+.d-flex .flex-container pre {
+  font-family: 'Courier New', Courier, monospace;
+  background: var(--light-black);
+  padding: 1rem;
+}
+
+.d-flex .flex-container {
+  min-width: 45%;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 1rem 0.6rem;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  font-size: 20px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--light-black);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  text-decoration: underline;
+}
+
+#clear {
+  margin: 0 0.5rem;
+}
