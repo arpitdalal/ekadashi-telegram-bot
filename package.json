@@ -4,9 +4,10 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "ts-node src/server.ts",
+    "start": "node dist/server.js",
     "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/server.ts",
     "build": "tsc",
+    "postinstall": "tsc",
     "prepare": "husky install",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
@@ -17,6 +18,10 @@
     "hooks": {
       "pre-commit": "npm run lint:fix && npm run prettier:fix"
     }
+  },
+  "engines": {
+    "node": ">=14.17.4",
+    "npm": "~7.21.1"
   },
   "keywords": [],
   "author": "",
