@@ -24,4 +24,4 @@ initAllWebRoutes(app);
 cronJob();
 
 // SERVER LISTEN ON THE GIVEN PORT
-app.listen(port);
+app.listen(port, () => console.log(`Server listening on ${port}`));
