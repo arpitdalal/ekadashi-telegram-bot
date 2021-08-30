@@ -5,9 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node dist/server.js",
+    "postinstall": "tsc && mv -r -i -v src/public dist/ && mv -r -i -v src/views dist/ && mv -i -v src/ekadashis.json dist/ && rm -v -rf src",
     "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/server.ts",
-    "build": "tsc",
-    "postinstall": "tsc && mv -i -v src/public dist/ && rm -v -rf src",
     "prepare": "husky install",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
