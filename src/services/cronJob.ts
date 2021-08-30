@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport(
 
 export const cronJob = (): void => {
   // RUNS AT 12:00 AM EVERY DAY
-  cron.schedule('0 0 * * *', function () {
+  cron.schedule('0 0 * * *', (): void => {
     console.log('---------------------');
     console.log('Running Cron Job');
 
