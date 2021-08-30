@@ -13,7 +13,8 @@
 body {
   background: var(--black);
   color: var(--white);
-  font-size: 18px;
+  font-size: 1em;
+  padding: 0 1rem;
 }
 
 .container {
@@ -35,7 +36,6 @@ h1 {
 
 #successOrError {
   text-align: center;
-  font-size: 18px;
 }
 
 .d-flex {
@@ -52,6 +52,7 @@ h1 {
   font-family: 'Courier New', Courier, monospace;
   background: var(--light-black);
   padding: 1rem;
+  margin: 0.5rem;
 }
 
 .d-flex .flex-container {
@@ -64,7 +65,7 @@ h1 {
   border: 0;
   cursor: pointer;
   border-radius: 0.25rem;
-  font-size: 20px;
+  font-size: 1.1em;
 }
 
 .btn:disabled {
