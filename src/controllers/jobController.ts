@@ -26,8 +26,6 @@ export const jobController = (_: Request, res: Response): void => {
   );
 
   ekadashis.forEach((ekadashi) => {
-    console.log(`Ekadashi-date: ${ekadashi.date}`);
-    console.log(`Formatted-date: ${todaysFormattedDate}`);
     if (todaysFormattedDate == ekadashi.date) {
       sendNotification(ekadashi)
         .then(() => {
