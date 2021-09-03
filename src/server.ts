@@ -1,7 +1,6 @@
 import { config } from 'dotenv';
 import express from 'express';
 
-import { cronJob } from './services/cronJob';
 import { configViewEngine } from './config/viewEngine';
 import { initAllWebRoutes } from './routes/web';
 
@@ -19,9 +18,6 @@ configViewEngine(app);
 
 // INITIALIZE THE WEB ROUTES
 initAllWebRoutes(app);
-
-// RUN THE CRON JOB
-cronJob();
 
 // SERVER LISTEN ON THE GIVEN PORT
 app.listen(port, () => console.log(`Server listening on ${port}`));

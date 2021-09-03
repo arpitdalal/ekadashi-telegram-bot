@@ -6,7 +6,7 @@ import { Ekadashi } from '../typings/ekadashis';
 
 // HANDLE _GET_ "/" ROUTE
 export const getHomePage = (_: Request, res: Response): void => {
-  res.render('homepage.ejs');
+  res.sendFile(path.join(__dirname, '../public/'));
 };
 
 // HANDLE _GET_ "/EKADASHIS" ROUTE
