@@ -15,9 +15,7 @@ export const sendEkadashis = (_: Request, res: Response): void => {
     path.join(__dirname, '../ekadashis.json'),
   );
   const ekadashisStringData = ekadashisRawData.toString();
-  const ekadashis: [Ekadashi] = JSON.parse(
-    ekadashisStringData,
-  );
+  const ekadashis: [Ekadashi] = JSON.parse(ekadashisStringData);
   res.send(ekadashis);
 };
 

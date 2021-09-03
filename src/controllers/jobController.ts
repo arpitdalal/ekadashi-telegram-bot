@@ -2,6 +2,7 @@ import moment from 'moment';
 import path from 'path';
 import fs from 'fs';
 import nodemailer from 'nodemailer';
+import { Request, Response } from 'express';
 
 import { sendNotification } from '../services/telegramService';
 import { Ekadashi } from '../typings/ekadashis';
@@ -10,7 +11,7 @@ const transporter = nodemailer.createTransport(
   `smtps://${process.env.NODEMAILER_USER}:${process.env.NODEMAILER_PASSWORD}@${process.env.NODEMAILER_HOST}`,
 );
 
-export const jobController = (): void => {
+export const jobController = (_: Request, res: Response): void => {
   console.log('---------------------');
   console.log('Running Job');
 
@@ -31,6 +32,10 @@ export const jobController = (): void => {
       sendNotification(ekadashi)
         .then(() => {
           console.log('Notification sent');
+
+          res.send({
+            ok: 'true',
+          });
         })
         .catch((err) => {
           // SEND AN EMAIL ABOUT THE ERROR TO ARPITDALALM@GMAIL.COM
@@ -45,7 +50,12 @@ export const jobController = (): void => {
               console.log(error);
             }
           });
+
+          res.send({
+            ok: 'false',
+            message: err,
+          });
         });
     }
   });
-}
+};

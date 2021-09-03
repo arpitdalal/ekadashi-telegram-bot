@@ -20,7 +20,7 @@ export const sendNotification = (ekadashi: Ekadashi): Promise<string> => {
           method: 'POST',
           json: data,
         },
-        err => {
+        (err) => {
           if (!err) {
             resolve('done!');
           } else {
