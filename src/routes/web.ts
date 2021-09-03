@@ -13,6 +13,6 @@ export const initAllWebRoutes = (app: Application): Application => {
   app.get('/', getHomePage);
   app.get('/ekadashis', sendEkadashis);
   app.post('/ekadashis', saveEkadashis);
-  app.get('/runJob', jobController);
+  app.get('/run-job', jobController);
   return app.use('/', router);
 };
