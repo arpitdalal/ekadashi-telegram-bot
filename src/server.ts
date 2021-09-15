@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 try {
   if (!fs.existsSync(path.join(__dirname, '../ekadashis.json'))) {
-    const defaultEkadashis = [{}];
+    const defaultEkadashis: {}[] = [];
     const defaultEkadashisBuffer = JSON.stringify(defaultEkadashis, null, 2);
     fs.writeFile(
       path.join(__dirname, '../ekadashis.json'),
