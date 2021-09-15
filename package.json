@@ -5,14 +5,14 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node dist/server.js",
-    "postinstall": "tsc && mv -i -v src/public dist/ && mv -i -v src/ekadashis.json dist/ && rm -v -rf src",
+    "postinstall": "tsc && mv -i -v src/public dist/ && rm -v -rf src",
     "local:dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/server.ts",
-    "local:build": "tsc && cp -r -i -v src/public dist/ && cp -i -v src/ekadashis.json dist/",
+    "local:build": "tsc && cp -r -i -v src/public dist/",
     "prepare": "husky install",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "prettier": "prettier src/**/*.ts --check",
-    "prettier:fix": "prettier src/**/*.ts --write"
+    "prettier:fix": "prettier src/*.ts src/**/*.ts --write"
   },
   "husky": {
     "hooks": {
