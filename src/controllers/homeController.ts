@@ -23,16 +23,20 @@ export const sendEkadashis = (_: Request, res: Response): void => {
 export const saveEkadashis = (req: Request, res: Response): void => {
   const body = req.body;
   const ekadashis = JSON.stringify(body, null, 2);
-  fs.writeFile(path.join(__dirname, '../../ekadashis.json'), ekadashis, (err) => {
-    if (err) {
-      res.send({
-        ok: 'false',
-        message: err,
-      });
-    } else {
-      res.send({
-        ok: 'true',
-      });
-    }
-  });
+  fs.writeFile(
+    path.join(__dirname, '../../ekadashis.json'),
+    ekadashis,
+    (err) => {
+      if (err) {
+        res.send({
+          ok: 'false',
+          message: err,
+        });
+      } else {
+        res.send({
+          ok: 'true',
+        });
+      }
+    },
+  );
 };
