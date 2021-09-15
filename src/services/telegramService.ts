@@ -29,8 +29,8 @@ export const sendNotification = (ekadashi: Ekadashi): Promise<string> => {
           }
         },
       );
-    } catch (e) {
-      reject(e);
+    } catch (err) {
+      reject(err);
     }
   });
 };
